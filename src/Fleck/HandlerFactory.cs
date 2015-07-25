@@ -21,7 +21,8 @@ namespace Fleck
                     return FlashSocketPolicyRequestHandler.Create(request);
             }
             
-            throw new WebSocketException(WebSocketStatusCodes.UnsupportedDataType);
+            //throw new WebSocketException(WebSocketStatusCodes.UnsupportedDataType);
+            return null;
         }
         
         public static string GetVersion(WebSocketHttpRequest request) 

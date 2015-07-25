@@ -30,7 +30,13 @@ namespace Fleck
             if(!MonoHelper.IsRunningOnMono()){
                   #if __MonoCS__
                   #else
+                try
+                {
                     socket.SetSocketOption(SocketOptionLevel.IPv6, SocketOptionName.IPv6Only, false);
+                }
+                catch (SocketException)
+                {
+                }
                   #endif
             }
             ListenerSocket = new SocketWrapper(socket);
